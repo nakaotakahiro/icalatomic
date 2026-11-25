@@ -1,0 +1,19 @@
+repos:
+  - repo: local
+    hooks:
+      - id: ruff-check
+        name: Ruff check
+        entry: uv run --locked ruff check --fix
+        language: system
+        types_or: [python, pyi]
+      - id: ruff-format
+        name: Ruff format
+        entry: uv run --locked ruff format
+        language: system
+        types_or: [python, pyi]
+      - id: prettier
+        name: Prettier
+        entry: prettier --write
+        language: node
+        types_or: [markdown, yaml, json, html]
+        additional_dependencies: [prettier@3.9.10]
